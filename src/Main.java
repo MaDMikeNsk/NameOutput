@@ -26,20 +26,12 @@ public class Main
 
     public static void main(String[] args)
     {
-        String name;
-        String surname;
-        String patronymic;
-
-        Scanner sc = new Scanner(System.in);                                           //Ввод
+        Scanner sc = new Scanner(System.in);
         System.out.println("Введите имя, фамилию и отчество, разделяя их пробелами");
         String text = sc.nextLine().trim();
 
-        surname = cutStringBetween(text,0,text.indexOf(' '));                   //Расчёт
-        name = cutStringBetween(text,text.indexOf(' '),text.lastIndexOf(' '));
-        patronymic = cutStringBetween(text,text.lastIndexOf(' '),text.length());
-
-        System.out.println("Фамилия: " + surname );                                    //Вывод
-        System.out.println("Имя: " + name );
-        System.out.println("Отчество: " + patronymic );
+        System.out.println("Фамилия: " + cutStringBetween(text,0,text.indexOf(' ')) );
+        System.out.println("Имя: " + cutStringBetween(text,text.indexOf(' '),text.lastIndexOf(' ')) );
+        System.out.println("Отчество: " + cutStringBetween(text,text.lastIndexOf(' '),text.length()));
     }
 }
